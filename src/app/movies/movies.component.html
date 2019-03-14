@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-6">
+        <mm-pagination [totalItems]="movies?.count"
+                       [pageSize]="parameters.pageSize"
+                       [currentPage]="parameters.page"
+                       (pageChange)="updateParams($event)"></mm-pagination>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label>Sort by: </label>
+            <select (change)="sortBy()" [(ngModel)]="sortCrit">
+                <option value="rating">Rating</option>
+                <option value="year">Year</option>
+            </select>
+            <button class="btn btn-secondary" (click)="changeDir()">Sort</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12" *ngFor="let m of movies?.results">
+        <mm-item [movies]="m"></mm-item>
+    </div>
+</div>

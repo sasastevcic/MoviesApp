@@ -1,0 +1,6 @@
+<div class="content">
+    <h2><span class="text-primary" [routerLink]="['/movies/', movies._id]">{{ movies.name }}</span>({{ movies.year }})</h2>
+    <p>{{ movies.description }}</p>
+    <img src="../../../assets/images/gold_star.png"><span>{{ movies.rating }}</span>
+    <p class="float-right">{{ movies.duration }} mins.</p>
+</div>
